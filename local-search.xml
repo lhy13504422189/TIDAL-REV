@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>新的评论系统已上线~</title>
+    <link href="/2026/05/03/%E6%96%B0%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E5%B7%B2%E4%B8%8A%E7%BA%BF/"/>
+    <url>/2026/05/03/%E6%96%B0%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E5%B7%B2%E4%B8%8A%E7%BA%BF/</url>
+    
+    <content type="html"><![CDATA[<h3 id="特色"><a href="#特色" class="headerlink" title="特色"></a>特色</h3><p>简单<br>免费搭建（使用云开发 &#x2F; Vercel &#x2F; 私有服务器作为评论后台）<br>简单部署（支持云开发 &#x2F; Vercel 一键部署）</p><h3 id="易用"><a href="#易用" class="headerlink" title="易用"></a>易用</h3><p>支持回复、点赞<br>无需额外适配，支持搭配浅色主题与深色主题使用<br>支持 API 调用，批量获取文章评论数、最新评论<br>访客在昵称栏输入 QQ 号，会自动补全 QQ 昵称和 QQ 邮箱<br>访客填写数字 QQ 邮箱，会使用 QQ 头像作为评论头像<br>支持评论框粘贴图片（可禁用）<br>支持插入图片（可禁用）<br>支持去不图床、云开发图床<br>支持插入表情（可禁用）<br>支持 Ctrl + Enter 快捷回复<br>评论框内容实时保存草稿，刷新不会丢失<br>支持 Katex 公式<br>支持按语言的代码高亮</p><h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>隐私信息安全（通过云函数控制敏感字段（邮箱、IP、环境配置等）不会泄露）<br>支持 Akismet 垃圾评论检测（需自行注册 akismet.com）<br>支持腾讯云内容安全垃圾评论检测（需自行注册 腾讯云内容安全）<br>支持人工审核模式<br>防 XSS 注入<br>支持限制每个 IP 每 10 分钟最多发表多少条评论</p><h3 id="即时"><a href="#即时" class="headerlink" title="即时"></a>即时</h3><p>支持邮件提醒（访客和博主）<br>支持微信提醒（仅针对博主，基于 Server酱，需自行注册）<br>支持 QQ 提醒（仅针对博主，基于 Qmsg酱，需自行注册）<br>支持 QQ 提醒（针对博主QQ或者群，基于 go-cqhttp，需自己有服务器）</p><h3 id="个性"><a href="#个性" class="headerlink" title="个性"></a>个性</h3><p>支持自定义评论框背景图片<br>支持自定义“博主”标识文字<br>支持自定义通知邮件模板<br>支持自定义评论框提示信息（placeholder）<br>支持自定义表情列表（兼容 OwO 的数据格式）<br>支持自定义【昵称】【邮箱】【网址】必填 &#x2F; 选填<br>支持自定义代码高亮主题</p><h3 id="便捷管理"><a href="#便捷管理" class="headerlink" title="便捷管理"></a>便捷管理</h3><p>内嵌式管理面板，通过密码登录，可方便地查看评论、隐藏评论、删除评论、修改配置<br>支持隐藏管理入口，通过输入暗号显示<br>支持从 Valine、Artalk、Disqus 导入评论</p><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>不支持 IE</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2023 年的梦，终在 2026 年重新点亮</title>
     <link href="/2026/05/03/2023-%E5%B9%B4%E7%9A%84%E6%A2%A6%EF%BC%8C%E7%BB%88%E5%9C%A8-2026-%E5%B9%B4%E9%87%8D%E6%96%B0%E7%82%B9%E4%BA%AE/"/>
     <url>/2026/05/03/2023-%E5%B9%B4%E7%9A%84%E6%A2%A6%EF%BC%8C%E7%BB%88%E5%9C%A8-2026-%E5%B9%B4%E9%87%8D%E6%96%B0%E7%82%B9%E4%BA%AE/</url>
