@@ -15,22 +15,24 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="L·KASPER">
+  <meta name="author" content="LHY">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="ai">
+    <meta name="description" content="潮汐助手           Powered by MiMo-V2.5-Pro                       200M Credits                           M         欢迎回来。潮汐已准备就绪，">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MiMo 智慧大脑">
 <meta property="og:url" content="https://tidalfc.pages.dev/ai/index.html">
-<meta property="og:site_name" content="TIDAL">
+<meta property="og:site_name" content="潮汐树洞">
+<meta property="og:description" content="潮汐助手           Powered by MiMo-V2.5-Pro                       200M Credits                           M         欢迎回来。潮汐已准备就绪，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-08T14:46:50.000Z">
-<meta property="article:modified_time" content="2026-05-08T14:46:50.583Z">
-<meta property="article:author" content="L·KASPER">
+<meta property="article:published_time" content="2026-05-08T16:57:51.333Z">
+<meta property="article:modified_time" content="2026-05-08T16:57:51.333Z">
+<meta property="article:author" content="LHY">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>ai - TIDAL</title>
+  <title>MiMo 智慧大脑 - 潮汐树洞</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -140,45 +142,21 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/ai/" target="_self">
+                <i class="iconfont icon-code"></i>
+                <span>Mimo</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-users"></i>
                 <span>一线队</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/CO/" target="_self">
-                <i class="iconfont icon-addrcard"></i>
-                <span>预备队</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/music/" target="_self">
-                <i class="iconfont icon-music"></i>
-                <span>主题曲</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/SkylineNews/" target="_self">
-                <i class="iconfont icon-wechat-fill"></i>
-                <span>合作者</span>
               </a>
             </li>
           
@@ -230,7 +208,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ai"></span>
+            <span id="subtitle" data-typed-text="MiMo 智慧大脑"></span>
           
         </div>
 
@@ -259,6 +237,278 @@
 
 <article class="page-content">
   
+<div id="mimo-wrapper">
+  <div id="mimo-glass-container">
+    <div id="mimo-header">
+      <div class="mimo-brand">
+        <div class="status-indicator">
+          <div class="status-dot"></div>
+          <div class="status-ring"></div>
+        </div>
+        <div class="title-group">
+          <span class="main-title">潮汐助手</span>
+          <span class="sub-title">Powered by MiMo-V2.5-Pro</span>
+        </div>
+      </div>
+      <div class="token-tag">200M Credits</div>
+    </div>
+
+    <div id="chat-content">
+      <div class="msg-wrapper ai">
+        <div class="avatar">M</div>
+        <div class="chat-msg">欢迎回来。潮汐已准备就绪，请问有什么可以帮您？</div>
+      </div>
+    </div>
+
+    <div id="chat-footer">
+      <div class="input-container">
+        <input type="text" id="ai-input" placeholder="输入您的问题..." autocomplete="off">
+        <button id="ai-send">
+          <svg class="send-icon" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+
+/* =========================================
+   1. 沉浸式背景：动态流体流光
+   ========================================= */
+body {
+  margin: 0; padding: 0;
+  background-color: #020408 !important;
+}
+
+#mimo-wrapper {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+  background: #020408;
+}
+
+/* 2. 创建多个不规则的流体光斑 */
+.tide-glow {
+  position: absolute;
+  width: 80vw;
+  height: 80vh;
+  filter: blur(80px);
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: -1;
+  mix-blend-mode: screen; /* 让颜色叠加时更透亮 */
+}
+
+/* 光斑 A：深海蓝 */
+.glow-1 {
+  background: radial-gradient(circle, #005bc5 0%, transparent 70%);
+  top: -10%; left: -10%;
+  animation: tideMove1 20s ease-in-out infinite alternate;
+}
+
+/* 光斑 B：极光绿 */
+.glow-2 {
+  background: radial-gradient(circle, #00f2fe 0%, transparent 70%);
+  bottom: -20%; right: -10%;
+  animation: tideMove2 25s ease-in-out infinite alternate-reverse;
+}
+
+/* 光斑 C：赛博紫 */
+.glow-3 {
+  background: radial-gradient(circle, #4facfe 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: tideMove3 30s linear infinite;
+}
+
+/* 3. 科技线条遮罩：让流动透过“缝隙”显现 */
+#mimo-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* 绘制不规则的细密网格，增加电子感 */
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  /* 渐变遮罩：中心清晰，边缘消失 */
+  mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+  pointer-events: none;
+}
+
+/* 4. 流体轨迹动画 */
+@keyframes tideMove1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30vw, 20vh) scale(1.2); }
+}
+
+@keyframes tideMove2 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-40vw, -30vh) rotate(90deg); }
+}
+
+@keyframes tideMove3 {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
+  50% { transform: translate(-30%, -60%) scale(1.5); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
+}
+
+/* 5. 玻璃容器优化：极致透明 */
+#mimo-glass-container {
+  width: 92vw;
+  height: 88vh;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.02); 
+  backdrop-filter: blur(60px) saturate(180%);
+  -webkit-backdrop-filter: blur(60px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 35px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.8);
+}
+
+
+  :root {
+    --tide-blue: #005bc5;
+    --glass: rgba(255, 255, 255, 0.7);
+    --ai-bubble: rgba(255, 255, 255, 0.95);
+    --user-bubble: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
+  }
+
+  #mimo-glass-container {
+    max-width: 850px;
+    margin: 0 auto;
+    height: 700px;
+    background: var(--glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+
+  /* 绿色呼吸灯样式 */
+  .status-indicator { position: relative; width: 20px; height: 20px; margin-right: 5px; }
+  .status-dot { 
+    position: absolute; top: 5px; left: 5px; width: 10px; height: 10px; 
+    background: #28cd41; border-radius: 50%; z-index: 2; 
+  }
+  .status-ring {
+    position: absolute; top: 0; left: 0; width: 20px; height: 20px;
+    background: rgba(40, 205, 65, 0.4); border-radius: 50%;
+    animation: breathing 2s infinite ease-out;
+  }
+
+  @keyframes breathing {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  #mimo-header { padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.2); }
+  .mimo-brand { display: flex; align-items: center; gap: 10px; }
+  .title-group { display: flex; flex-direction: column; }
+  .main-title { font-size: 16px; font-weight: 800; color: #1d1d1f; }
+  .sub-title { font-size: 11px; color: #86868b; }
+  .token-tag { font-size: 10px; padding: 4px 10px; border-radius: 20px; background: rgba(0,91,197,0.1); color: var(--tide-blue); border: 1px solid rgba(0,91,197,0.2); }
+
+  #chat-content { flex: 1; overflow-y: auto; padding: 30px; display: flex; flex-direction: column; gap: 20px; }
+  .msg-wrapper { display: flex; gap: 12px; max-width: 85%; animation: fadeIn 0.4s ease; }
+  .msg-wrapper.user { align-self: flex-end; flex-direction: row-reverse; }
+  .avatar { width: 36px; height: 36px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+  .msg-wrapper.ai .avatar { background: white; color: var(--tide-blue); border: 1px solid #eee; }
+  .msg-wrapper.user .avatar { background: var(--user-bubble); color: white; }
+
+  .chat-msg { padding: 12px 20px; border-radius: 20px; font-size: 15px; line-height: 1.6; }
+  .msg-wrapper.ai .chat-msg { background: var(--ai-bubble); color: #333; border-top-left-radius: 5px; }
+  .msg-wrapper.user .chat-msg { background: var(--user-bubble); color: white; border-top-right-radius: 5px; }
+
+  #chat-footer { padding: 25px 30px; background: rgba(255,255,255,0.3); }
+  .input-container { display: flex; align-items: center; background: white; border-radius: 18px; padding: 5px 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+  #ai-input { flex: 1; border: none; padding: 12px 15px; outline: none; font-size: 15px; background: transparent; }
+  #ai-send { width: 42px; height: 42px; border-radius: 14px; border: none; background: #fe6900 ;color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .send-icon { width: 20px; height: 20px; fill: currentColor; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  #chat-content::-webkit-scrollbar { width: 4px; }
+  #chat-content::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
+</style>
+
+
+<script>
+  const chatContent = document.getElementById('chat-content');
+  const aiInput = document.getElementById('ai-input');
+  const aiSend = document.getElementById('ai-send');
+  
+  // 请务必更换为你成功的 Worker 地址
+  const PROXY_URL = 'https://mimo-api.lhy1207.workers.dev'; 
+
+  function appendMsg(text, role) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'msg-wrapper ' + role;
+    wrapper.innerHTML = `
+      <div class="avatar">${role === 'ai' ? 'M' : 'U'}</div>
+      <div class="chat-msg">${text}</div>
+    `;
+    chatContent.appendChild(wrapper);
+    chatContent.scrollTop = chatContent.scrollHeight;
+    return wrapper;
+  }
+
+  async function handleSend() {
+    const text = aiInput.value.trim();
+    if(!text) return;
+    
+    appendMsg(text, 'user');
+    aiInput.value = '';
+    
+    const loadingWrapper = appendMsg('潮汐正在思考...', 'ai');
+    const msgDiv = loadingWrapper.querySelector('.chat-msg');
+
+    try {
+      const response = await fetch(PROXY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: [{ role: 'user', content: text }] })
+      });
+
+      if (!response.ok) throw new Error('Network error');
+      
+      const data = await response.json();
+      const content = data.choices[0].message.content;
+      
+      // 执行打字机效果
+      msgDiv.innerText = '';
+      let index = 0;
+      const interval = setInterval(() => {
+        if (index < content.length) {
+          msgDiv.innerText += content.charAt(index);
+          index++;
+          chatContent.scrollTop = chatContent.scrollHeight;
+        } else {
+          clearInterval(interval);
+        }
+      }, 20);
+
+    } catch (error) {
+      msgDiv.innerText = '暂无法连接到智慧大脑，请稍后再试。';
+    }
+  }
+
+  aiSend.onclick = handleSend;
+  aiInput.onkeydown = (e) => { if(e.key === 'Enter') handleSend(); };
+</script>
+
+
+
+
 
   
 
