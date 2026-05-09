@@ -3,151 +3,135 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>下载潮汐树洞 App</title>
     <style>
-        /* 基础重置 */
+        /* 1. 基础重置 */
         html, body {
-            margin: 0; padding: 0; width: 100%; height: 100%;
-            background: #02040a; overflow-x: hidden;
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            margin: 0; padding: 0; width: 100%; min-height: 100%;
+            background: #02040a; color: #fff;
+            font-family: -apple-system, "SF Pro Display", "PingFang SC", sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* 动态星云背景 */
-        #nebula-canvas {
-            position: fixed; inset: 0;
-            background: #02040a; z-index: 0;
-        }
-        .blob {
-            position: absolute; width: 600px; height: 600px;
-            filter: blur(80px); opacity: 0.25; border-radius: 50%;
-            animation: move 20s infinite alternate ease-in-out;
-        }
-        .b1 { background: #0072ff; top: -10%; left: -10%; }
-        .b2 { background: #7028e4; bottom: -10%; right: -10%; animation-delay: -5s; }
-        .b3 { background: #ff007a; top: 40%; right: -20%; animation-delay: -10s; }
-
-        @keyframes move {
-            from { transform: translate(0, 0) scale(1); }
-            to { transform: translate(20%, 15%) scale(1.2); }
+        /* 2. 背景：优化后的星云，减少性能开销 */
+        #nebula-bg {
+            position: fixed; inset: 0; z-index: 0;
+            background: radial-gradient(circle at 20% 20%, #0072ff33 0%, transparent 40%),
+                        radial-gradient(circle at 80% 80%, #7028e433 0%, transparent 40%);
         }
 
-        /* 布局层 */
-        .main-content {
+        /* 3. 核心布局容器：限制大屏宽度 */
+        .page-wrapper {
             position: relative; z-index: 10;
-            min-height: 100vh;
+            width: 100%; max-width: 1200px; /* 电脑端不撑满，居中显示 */
+            margin: 0 auto;
+            min-height: 100dvh;
             display: flex; flex-direction: column;
             align-items: center; justify-content: center;
-            padding: 40px 20px; box-sizing: border-box;
+            padding: 40px 24px;
+            box-sizing: border-box;
         }
 
-        .header { text-align: center; margin-bottom: 50px; }
-        .logo { font-size: 64px; margin-bottom: 15px; display: block; }
-        .header h1 { font-size: 32px; color: #fff; margin: 0; letter-spacing: 2px; }
-        .header p { color: rgba(255,255,255,0.5); margin-top: 10px; }
+        /* 4. 头部优化 */
+        .header { text-align: center; margin-bottom: 40px; }
+        .logo { font-size: 56px; margin-bottom: 12px; display: block; filter: drop-shadow(0 0 20px #0072ff); }
+        .header h1 { font-size: 32px; font-weight: 700; margin: 0; letter-spacing: -0.5px; }
+        .header p { color: rgba(255,255,255,0.45); margin-top: 8px; font-size: 15px; }
 
-        /* 卡片组 */
+        /* 5. 下载网格：适配核心 */
         .download-grid {
-            display: flex; flex-wrap: wrap;
-            justify-content: center; gap: 24px;
-            width: 100%; max-width: 1100px;
+            display: grid;
+            /* 电脑三列，平板二列，手机一列 */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; width: 100%;
         }
 
         .card {
-            flex: 1; min-width: 300px; max-width: 340px;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px; padding: 40px 30px;
-            text-align: center; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px; padding: 32px 24px;
+            text-align: center;
             display: flex; flex-direction: column;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1), background 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-12px);
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(255, 255, 255, 0.3);
+        .card:hover { 
+            transform: translateY(-8px); 
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
-        .card-icon { font-size: 48px; margin-bottom: 20px; }
-        .card h3 { color: #fff; font-size: 20px; margin-bottom: 15px; }
-        .card p { color: rgba(255,255,255,0.4); font-size: 14px; line-height: 1.6; flex-grow: 1; margin-bottom: 25px; }
+        .card-icon { font-size: 40px; margin-bottom: 16px; }
+        .card h3 { font-size: 19px; margin-bottom: 12px; font-weight: 600; }
+        .card p { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.5; margin-bottom: 24px; flex-grow: 1; }
 
-        /* 按钮与备注 */
+        /* 6. 按钮与备注 */
         .dl-btn {
-            display: inline-block; padding: 14px 28px;
-            border-radius: 14px; text-decoration: none;
-            font-weight: 600; font-size: 16px; color: #fff;
-            transition: 0.3s; margin-bottom: 10px;
+            display: flex; align-items: center; justify-content: center;
+            height: 52px; border-radius: 14px;
+            text-decoration: none; font-weight: 600; font-size: 16px; color: #fff;
+            margin-bottom: 10px; transition: 0.2s;
         }
-        .btn-blue { background: linear-gradient(135deg, #0072ff, #00c6ff); }
-        .btn-purple { background: linear-gradient(135deg, #7028e4, #e5b2ca); }
-        .btn-dark { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
-        
-        /* 备注样式：醒目且不突兀 */
-        .btn-note {
-            font-size: 12px;
-            color: #00f2fe; /* 使用亮色提醒 */
-            margin: 0;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-        .note-gray { color: rgba(255,255,255,0.4); }
+        .btn-blue { background: #0072ff; box-shadow: 0 8px 20px rgba(0,114,255,0.2); }
+        .btn-purple { background: #7028e4; box-shadow: 0 8px 20px rgba(112,40,228,0.2); }
+        .btn-dark { background: rgba(255,255,255,0.1); }
 
-        .footer-info {
-            margin-top: 60px; text-align: center;
-            color: rgba(255,255,255,0.2); font-size: 12px; line-height: 2;
-        }
+        .note { font-size: 12px; font-weight: 500; margin: 0; }
+        .note.cyan { color: #00f2fe; }
+        .note.orange { color: #ff9f43; }
+        .note.gray { color: rgba(255,255,255,0.3); }
 
+        /* 7. 响应式微调 (针对手机) */
         @media (max-width: 600px) {
-            .card { min-width: 100%; }
+            .page-wrapper { padding: 30px 20px; justify-content: flex-start; } /* 手机端靠上排布 */
+            .header { margin-bottom: 30px; margin-top: 20px; }
             .header h1 { font-size: 26px; }
+            .download-grid { grid-template-columns: 1fr; } /* 强制单列 */
+            .card { padding: 24px; }
         }
+
+        .footer { margin-top: 40px; text-align: center; color: rgba(255,255,255,0.2); font-size: 11px; }
     </style>
 </head>
 <body>
-    <div id="nebula-canvas">
-        <div class="blob b1"></div>
-        <div class="blob b2"></div>
-        <div class="blob b3"></div>
-    </div>
-
-    <div class="main-content">
+    <div id="nebula-bg"></div>
+    <div class="page-wrapper">
         <header class="header">
             <span class="logo">🌊</span>
-            <h1>TidHub 潮汐树洞</h1>
-            <p>跨越 GAOKAO 2026 的个人数字空间</p>
+            <h1>TidHub 潮汐树洞 v3.0</h1>
+            <p>穿越时空的回响</p>
         </header>
 
         <div class="download-grid">
             <div class="card">
                 <div class="card-icon">🚀</div>
                 <h3>高速通道</h3>
-                <p>推荐中国大陆用户使用。无需特殊网络，直连秒下，体验最流畅。</p>
-                <a href="你的蓝奏云链接" target="_blank" class="dl-btn btn-blue">蓝奏云下载</a>
-                <p class="btn-note">🔑 提取码：1111</p>
+                <p>大陆直连首选。无需特殊工具，秒级启动下载。</p>
+                <a href="https://wwaps.lanzoue.com/ipmHT3p2zuyf" target="_blank" class="dl-btn btn-blue">蓝奏云下载</a>
+                <p class="note cyan">🔑 提取码：1111</p>
             </div>
 
             <div class="card">
                 <div class="card-icon">🐙</div>
-                <h3>GitHub 原生</h3>
-                <p>直接从项目仓库获取原始构建包，查看版本日志，适合极客用户。</p>
-                <a href="你的GitHub链接" target="_blank" class="dl-btn btn-purple">GitHub 获取</a>
-                <p class="btn-note note-gray">✨ 无需提取码</p>
+                <h3>GitHub</h3>
+                <p>获取原始构建包，支持版本溯源，适合极客玩家。</p>
+                <a href="https://github.com/lhy13504422189/TIDHUB/releases/tag/App" target="_blank" class="dl-btn btn-purple">GitHub 获取</a>
+                <p class="note gray">✨ 无需提取码</p>
             </div>
 
             <div class="card">
                 <div class="card-icon">💾</div>
-                <h3>备用云盘</h3>
-                <p>大容量备份地址。如果上方高速通道由于流量限制失效，请尝试此处。</p>
-                <a href="你的123云盘链接" target="_blank" class="dl-btn btn-dark">123云盘下载</a>
-                <p class="btn-note" style="color: #ff9f43;">⚠️ 需登录云盘账号</p>
+                <h3>镜像备份</h3>
+                <p>官方下载受限时的稳定替代方案。</p>
+                <a href="https://1859090590.share.123865.com/123pan/AgCcvd-gGWq" target="_blank" class="dl-btn btn-dark">123 云盘下载</a>
+                <p class="note orange">⚠️ 需登录账号</p>
             </div>
         </div>
 
-        <footer class="footer-info">
-            <p>Android 提示：安装时若提示风险，请选择“信任应用”继续安装</p>
-            <p>Powered by Cloudflare & tidhub.pw | 2026 届高三生作品</p>
+        <footer class="footer">
+            <p>仅支持 Android 系统 | 请信任来自 tidhub.pw 的应用</p>
         </footer>
     </div>
 </body>
