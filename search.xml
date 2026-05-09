@@ -248,9 +248,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
   <entry>
     <title>感谢小米 MiMo 支持的两亿 Token：让“潮汐树洞”拥有更广阔的可能</title>
     <url>/2026/05/09/%E6%84%9F%E8%B0%A2%E5%B0%8F%E7%B1%B3mimo%E4%B8%BA%E6%88%91%E6%94%AF%E6%8C%81%E7%9A%84%E4%B8%A4%E4%BA%BFtoken/</url>
-    <content><![CDATA[<h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>一个网站的生命力不仅在于文字的堆砌，更在于其传递的价值。</p>
-<p>这份坚持得到了<strong>小米 MiMo 官方</strong>的关注与认可。近日有幸获得了小米 MiMo 提供的 <strong>200,000,000 Credits（两亿 Token）</strong> 专项额度支持。</p>
-<p>这份来自顶尖技术平台的认可，为“潮汐树洞”接入智能化交互提供了核心动力，也让本站的研究与分享有了更多纵深发展的可能。</p>
+    <content><![CDATA[<h3 id="网站版本公告"><a href="#网站版本公告" class="headerlink" title="网站版本公告"></a>网站版本公告</h3><p>5.1.0属于对mimo的初步摸索，还有很多需要改进，目前只能通过VPN访问，预计5月11日更新5.1.1版本回修复这一问题，感谢理解。</p>
 <h3 id="立即体验"><a href="#立即体验" class="headerlink" title="立即体验"></a>立即体验</h3><div style="text-align: center;">
   <a href="/ai/" class="btn btn-primary" style="border-radius: 20px; padding: 10px 25px;">
     立即体验Mimo 🚀
@@ -258,6 +256,9 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
 </div>
 
 
+<h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>一个网站的生命力不仅在于文字的堆砌，更在于其传递的价值。</p>
+<p>这份坚持得到了<strong>小米 MiMo 官方</strong>的关注与认可。近日有幸获得了小米 MiMo 提供的 <strong>200,000,000 Credits（两亿 Token）</strong> 专项额度支持。</p>
+<p>这份来自顶尖技术平台的认可，为“潮汐树洞”接入智能化交互提供了核心动力，也让本站的研究与分享有了更多纵深发展的可能。</p>
 <h3 id="价值的共鸣"><a href="#价值的共鸣" class="headerlink" title="价值的共鸣"></a>价值的共鸣</h3><p>小米 MiMo 此次提供的大额度支持，本质上是对“潮汐树洞”<strong>原创内容价值</strong>与<strong>技术探索精神</strong>的肯定。</p>
 <p>在申请过程中，官方对本站长期积累的技术文档、实战案例以及纯粹的交流氛围给予了高度评价。这种“技术赋能内容”的模式，让两亿 Token 不仅仅是一个数字，更是一份沉甸甸的信任。它意味着本站可以不再受限于算力成本，真正将 AI 技术深度融入到每一个知识点和交互环节中。</p>
 <h3 id="技术落地：安全与优雅的集成"><a href="#技术落地：安全与优雅的集成" class="headerlink" title="技术落地：安全与优雅的集成"></a>技术落地：安全与优雅的集成</h3><p>为了不负这份信任，本人在后端架构上也进行了精细化的打磨，甚至筹备起了独立域名：</p>
